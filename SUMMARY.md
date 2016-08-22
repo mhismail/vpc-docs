@@ -1,3 +1,11 @@
 # Summary
+* [First Chapter](chapter1)
 
-* [First Chapter](chapter1.md)
+## Introduction
+* Overview functionality
+
+## Getting started
+* Installation
+* Basic examples
+
+## Documentation

@@ -1,4 +1,4 @@
-# stratification
+# Stratification
 
 Example with stratifcation by covariate `sex`:
 

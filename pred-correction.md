@@ -1,5 +1,5 @@
 # Prediction-correction
 
-Prediction correction is easily implemented using the `pred_corr` argument. The following command will perform the prediciton-correction and also plot the observed data:
+An explanationo of prediction-correction and why it is sometimes necessary is provided in [this article by Bergstrand et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3085712). Prediction correction is implemented in this package using the `pred_corr` argument to the `vpc()` function. For example, the following command will perform the prediciton-correction and also plot the observed data:
 
     vpc (sim = sim, obs = obs, pred_corr = TRUE, show=list(obs_dv = TRUE, obs_ci = TRUE))

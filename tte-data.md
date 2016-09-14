@@ -43,7 +43,7 @@ Stratified for event number (RTTE) and study arm:
             sim_cols = list(dv = "dv", idv="t"),
             obs_cols = list(idv = "t"), verbose=TRUE)
 
-### Kaplan-Meier Mean Covariate plots (KMMC)
+## Kaplan-Meier Mean Covariate plots (KMMC)
 
     vpc_tte(sim = rtte_sim_nm,
             obs = rtte_obs_nm,

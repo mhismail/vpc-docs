@@ -38,22 +38,22 @@ Next, the VPC can simply be created using:
     vpc (sim = sim, obs = obs)
 
 
-With more explicit use of options, and saving the object:
+An example with more explicit use of options and theming:
 
     vpc(sim = sim,
-           obs = obs,                                   # supply simulation and observation dataframes
+           obs = obs,                               # supply simulation and observation dataframes
            obs_cols = list(
-             dv = "dv",                               # these column names are the default,
-             idv = "time"),                            #   update these if different.
+             dv = "dv",                             # these column names are the default,
+             idv = "time"),                         # update these if different.
            sim_cols = list(
              dv = "sdv",
              idv = "time"),
-           bins = c(0, 2, 4, 6, 8, 10, 16, 25),             # specify bin separators manually
-           stratify = c("sex"),                         # multiple stratifications possible, just supply as vector
-           pi = c(0.05, 0.95),                          # prediction interval simulated data to show
-           ci = c(0.05, 0.95),                          # confidence intervals to show
-           pred_corr = FALSE,                           # perform prediction-correction?
-           show = list(obs_dv = TRUE),                              # plot observations?
-           facet = "rows",                              # wrap stratifications, or as "row" or "column"
+           bins = c(0, 2, 4, 6, 8, 10, 16, 25),     # specify bin separators manually
+           stratify = c("sex"),                     # multiple stratifications possible, just supply as vector
+           pi = c(0.05, 0.95),                      # prediction interval simulated data to show
+           ci = c(0.05, 0.95),                      # confidence intervals to show
+           pred_corr = FALSE,                       # perform prediction-correction?
+           show = list(obs_dv = TRUE),              # plot observations?
+           facet = "rows",                          # wrap stratifications, or as "row" or "column"
            ylab = "Concentration",
-            xlab = "Time (hrs)")
+           xlab = "Time (hrs)")

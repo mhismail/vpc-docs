@@ -12,7 +12,6 @@
 * [Time-to-event data](tte-data.md)
 
 ## Customization
-* [Overview](customization-overview.md)
 * [Stratification](stratification.md)
 * [Binning](binning.md)
 * [Prediction correction](pred-correction.md)

@@ -16,5 +16,4 @@
 * [Stratification](stratification.md)
 * [Binning](binning.md)
 * [Prediction correction](pred-correction.md)
-* [Show / hide elements](show-hide.md)
-* [Theming](theming.md)
+* [Appearance](appearance.md)

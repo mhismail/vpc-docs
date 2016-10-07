@@ -8,6 +8,6 @@
      "start": "node app.js"
   },
   "dependencies": {
-    "node-static": "*"
+    "express": "*"
   }
 }

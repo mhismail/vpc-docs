@@ -2,7 +2,13 @@
 
 The VPC can be shown in many different ways, which might depend e.g. on the amount of data available, the statistic to evaluate, the message one wants to convey, the target audience, etc. For more information about the elements of the VPC, and e.g. the difference between confidence intervals and prediction intervals, and why it is usually important to show both, please have a look at e.g. [this tutorial about VPCs](http://page-meeting.org/pdf_assets/8694-Karlsson_Holford_VPC_Tutorial_hires.pdf).
 
-Showing and hiding elements, as well as theming of the vpc is explained below.
+## Smoothing
+
+A VPC can be plotted as either "smooth" or "non-smooth". The latter will explicitly show the sizes and borders of the bins in the VPC and will thus be more "blocky" but confer a bit more information than the "smooth" VPC. However, the "smooth" VPC usually is more visually appealing. By default, smoothing is set to TRUE.
+
+    vpc(sim, obs, smooth=TRUE)
+    vpc(sim, obs, smooth=FALSE)
+
 
 ## Showing / hiding elements
 

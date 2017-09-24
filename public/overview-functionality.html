@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Overview · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Overview · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -299,22 +299,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="overview-functionality">Overview functionality</h1><p>There are four main functions in the vpc package:</p><ul><li><code>vpc()</code>: VPC for continuous data
-</li>
-<li><code>vpc_cat()</code>: VPC for categorical data
-</li>
-<li><code>vpc_cens()</code>: VPC for censored continuous data (e.g. data &lt; LOQ)
-</li>
-<li><code>vpc_tte()</code>: VPC for (repeated) time-to-event data
-</li></ul>
-<p>The main arguments to these function are the <code>sim</code> and <code>obs</code> arguments, which specify a simulation dataset and an observation dataset. All other arguments can be used to customize data parsing and visual appearance of the VPC such as stratification and binning. All four functions will return a ggplot2 object.</p><h2 id="separation-of-calculations-and-plotting">Separation of calculations and plotting</h2><p>With the <em>vpc</em> package you can easily separate the process of calculating the statistics and plotting of those statistics. This can be useful if the calculation of the statistics is slow, or if you want to use the statistics for numerical comparisons.</p><p>By default, using one of the four functions listed above, both the calculations and the plotting is done in a single step, and the statistics are not made available. To create a vpc <em>database</em> object and not directly plot the statistics, use the <code>vpcdb=TRUE</code> argument:</p><pre><code>vpc1 &lt;- vpc(sim = sim, obs = obs, vpcdb = TRUE)</code></pre>
-<p>This will return the statistics as a <em>list</em>. You can inspect the data and stats in the database object by just calling it on the console:</p><pre><code>vpc1</code></pre>
-<p>You can then use the <code>plot_vpc()</code> function to actually plot the <em>vpc</em>, potentially changing some of the layout or theming of the <em>vpc</em>:</p><pre><code>plot_vpc(
+                                <h1 id="overview-functionality">Overview functionality</h1>
+<p>There are four main functions in the vpc package:</p>
+<ul>
+<li><code>vpc()</code>: VPC for continuous data</li>
+<li><code>vpc_cat()</code>: VPC for categorical data</li>
+<li><code>vpc_cens()</code>: VPC for censored continuous data (e.g. data &lt; LOQ)</li>
+<li><code>vpc_tte()</code>: VPC for (repeated) time-to-event data</li>
+</ul>
+<p>The main arguments to these function are the <code>sim</code> and <code>obs</code> arguments, which specify a simulation dataset and an observation dataset. All other arguments can be used to customize data parsing and visual appearance of the VPC such as stratification and binning. All four functions will return a ggplot2 object.</p>
+<h2 id="separation-of-calculations-and-plotting">Separation of calculations and plotting</h2>
+<p>With the <em>vpc</em> package you can easily separate the process of calculating the statistics and plotting of those statistics. This can be useful if the calculation of the statistics is slow, or if you want to use the statistics for numerical comparisons.</p>
+<p>By default, using one of the four functions listed above, both the calculations and the plotting is done in a single step, and the statistics are not made available. To create a vpc <em>database</em> object and not directly plot the statistics, use the <code>vpcdb=TRUE</code> argument:</p>
+<pre><code>vpc1 &lt;- vpc(sim = sim, obs = obs, vpcdb = TRUE)
+</code></pre><p>This will return the statistics as a <em>list</em>. You can inspect the data and stats in the database object by just calling it on the console:</p>
+<pre><code>vpc1
+</code></pre><p>You can then use the <code>plot_vpc()</code> function to actually plot the <em>vpc</em>, potentially changing some of the layout or theming of the <em>vpc</em>:</p>
+<pre><code>plot_vpc(
   vpc1,
   show = list(obs_dv = TRUE, obs_ci = FALSE),
-  xlab = &quot;Time (hours)&quot;, ylab = &quot;Concentration&quot;, title=&quot;VPC!&quot;)</code></pre>
-<p>If you want to use a standard or custom ggplot-theme, just add it on top (load the ggplot2 library first):</p><pre><code>plot_vpc(vpc1) + theme_bw()</code></pre>
-<p>See the customization section for more information regarding theming and plotting.</p>
+  xlab = &quot;Time (hours)&quot;, ylab = &quot;Concentration&quot;, title=&quot;VPC!&quot;)
+</code></pre><p>If you want to use a standard or custom ggplot-theme, just add it on top (load the ggplot2 library first):</p>
+<pre><code>plot_vpc(vpc1) + theme_bw()
+</code></pre><p>See the customization section for more information regarding theming and plotting.</p>
+
                                 
                                 </section>
                             
@@ -357,7 +365,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Overview","level":"1.3","depth":1,"next":{"title":"Continuous data","level":"2.1","depth":1,"path":"continuous-data.md","ref":"continuous-data.md","articles":[]},"previous":{"title":"Installation","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"overview-functionality.md","mtime":"2016-09-09T18:42:27.561Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-07T15:57:32.976Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Overview","level":"1.3","depth":1,"next":{"title":"Continuous data","level":"2.1","depth":1,"path":"continuous-data.md","ref":"continuous-data.md","articles":[]},"previous":{"title":"Installation","level":"1.2","depth":1,"path":"installation.md","ref":"installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"overview-functionality.md","mtime":"2016-09-09T18:42:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-24T14:35:02.296Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

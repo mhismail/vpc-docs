@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Binning · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Binning · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -299,19 +299,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="binning">Binning</h1><p>The vpc functions currently provide three options for binning (<code>bins=</code> argument):</p><ul><li><code>time</code>:  Divide bins equally over time (or whatever independent variable is used). Recommended only when there is no observable clustering in the indenpendent variable.
-</li>
-<li><code>data</code>: Divide bins equally over the amount of data ordered by independent variable. Recommended only when data are for nominal timepoints <em>and</em> all datapoints are available.
-</li>
-<li><code>density</code>: Divide bins based on data-density, i.e. place the bin-separators at nadirs in the density function. An approximate number of bins can be specified, but it is not certain that the algorithm will strictly use the specified number. More info in <code>?auto_bin()</code>.
-</li>
-<li><code>jenks</code>: Default and recommended method. Jenk&apos;s natural breaks optimization, similar to K-means clustering.
-</li>
-<li><code>kmeans</code>: K-means clustering.
-</li>
-<li><code>pretty</code>, <code>quantile</code>, <code>hclust</code>, <code>sd</code>, <code>bclust</code>, <code>fisher</code>. Methods provided by the <code>classInt</code> package, see the package help for more information.
-</li></ul>
+                                <h1 id="binning">Binning</h1>
+<p>The vpc functions currently provide three options for binning (<code>bins=</code> argument):</p>
+<ul>
+<li><code>time</code>:  Divide bins equally over time (or whatever independent variable is used). Recommended only when there is no observable clustering in the indenpendent variable.</li>
+<li><code>data</code>: Divide bins equally over the amount of data ordered by independent variable. Recommended only when data are for nominal timepoints <em>and</em> all datapoints are available.</li>
+<li><code>density</code>: Divide bins based on data-density, i.e. place the bin-separators at nadirs in the density function. An approximate number of bins can be specified, but it is not certain that the algorithm will strictly use the specified number. More info in <code>?auto_bin()</code>.</li>
+<li><code>jenks</code>: Default and recommended method. Jenk&apos;s natural breaks optimization, similar to K-means clustering.</li>
+<li><code>kmeans</code>: K-means clustering.</li>
+<li><code>pretty</code>, <code>quantile</code>, <code>hclust</code>, <code>sd</code>, <code>bclust</code>, <code>fisher</code>. Methods provided by the <code>classInt</code> package, see the package help for more information.</li>
+</ul>
 <p>Automatic determination of <em>optimal</em> bin number (as described e.g. by Lavielle et al. and Sonehag et al.) will be provided soon.</p>
+
                                 
                                 </section>
                             
@@ -354,7 +353,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Binning","level":"3.2","depth":1,"next":{"title":"Prediction correction","level":"3.3","depth":1,"path":"pred-correction.md","ref":"pred-correction.md","articles":[]},"previous":{"title":"Stratification","level":"3.1","depth":1,"path":"stratification.md","ref":"stratification.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"binning.md","mtime":"2016-08-22T04:01:37.850Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-07T15:57:32.976Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Binning","level":"3.2","depth":1,"next":{"title":"Prediction correction","level":"3.3","depth":1,"path":"pred-correction.md","ref":"pred-correction.md","articles":[]},"previous":{"title":"Stratification","level":"3.1","depth":1,"path":"stratification.md","ref":"stratification.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"binning.md","mtime":"2016-08-22T04:01:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-24T14:35:02.296Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Stratification · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Stratification · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -299,8 +299,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="stratification">Stratification</h1><p>Example with stratifcation by covariate <code>sex</code>:</p><pre><code>vpc (sim = sim, obs = obs, stratify = c(&quot;sex&quot;), facet = &quot;rows&quot;)</code></pre>
-<p>The <code>vpc_</code> functions in this packages allow stratification by 2 variables (horizontal and vertical faceting). If more strata are desired, a new combined variable should be defined that defines the factors.</p><p><em>Note: The output from the <code>vpc()</code> functions are ggplot2-objects, and they can easily be extended and themed using the well-known functions from the ggplot2 package. One cautionary note however is that you should refrain from applying any additional faceting functions after the VPC has been created. In other words, faceting should be done using the <code>vpc()</code> functions (<code>stratify</code>=... argument). Otherwise you will end up with funky (in the best case) or misleading (in the worst case) plots.</em></p>
+                                <h1 id="stratification">Stratification</h1>
+<p>Example with stratifcation by covariate <code>sex</code>:</p>
+<pre><code>vpc (sim = sim, obs = obs, stratify = c(&quot;sex&quot;), facet = &quot;rows&quot;)
+</code></pre><p>The <code>vpc_</code> functions in this packages allow stratification by 2 variables (horizontal and vertical faceting). If more strata are desired, a new combined variable should be defined that defines the factors.</p>
+<p><em>Note: The output from the <code>vpc()</code> functions are ggplot2-objects, and they can easily be extended and themed using the well-known functions from the ggplot2 package. One cautionary note however is that you should refrain from applying any additional faceting functions after the VPC has been created. In other words, faceting should be done using the <code>vpc()</code> functions (<code>stratify</code>=... argument). Otherwise you will end up with funky (in the best case) or misleading (in the worst case) plots.</em></p>
+
                                 
                                 </section>
                             
@@ -343,7 +347,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Stratification","level":"3.1","depth":1,"next":{"title":"Binning","level":"3.2","depth":1,"path":"binning.md","ref":"binning.md","articles":[]},"previous":{"title":"Time-to-event data","level":"2.4","depth":1,"path":"tte-data.md","ref":"tte-data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"stratification.md","mtime":"2016-09-09T18:41:37.749Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-07T15:57:32.976Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Stratification","level":"3.1","depth":1,"next":{"title":"Binning","level":"3.2","depth":1,"path":"binning.md","ref":"binning.md","articles":[]},"previous":{"title":"Time-to-event data","level":"2.4","depth":1,"path":"tte-data.md","ref":"tte-data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"stratification.md","mtime":"2016-09-09T18:41:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-24T14:35:02.296Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Continuous data · GitBook</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Continuous data · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -299,31 +299,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="continuous-data">Continuous data</h1><p>Load the library and get the observation data and simulation data.
-In the first example, we&apos;ll use a dataset that&apos;s available in R by default (Theophylline) and generate the simulation dataset in R.</p><pre><code>library(dplyr)
-
-## Load the theophylline PK dataset
-obs &lt;- Theoph
-colnames(obs) &lt;- c(&quot;id&quot;, &quot;wt&quot;, &quot;dose&quot;, &quot;time&quot;, &quot;dv&quot;)
-obs &lt;- obs %&gt;%
-        group_by(id) %&gt;%
-        mutate(sex = round(runif(1))) # randomly assign a &quot;sex&quot; covariate
-sim &lt;- sim_data(obs, # the design of the dataset
-                model = function(x) { # the model
-                  pk_oral_1cmt (t = x$time, dose=x$dose * x$wt, ka = x$ka, ke = x$ke, cl = x$cl * x$wt)
-                },
-                error = list(additive = 0.1),
-                theta = c(2.774, 0.0718, .0361),                 # parameter values
-                omega_mat = c(0.08854,                           # specified as lower triangle by default;
-                              0.02421, 0.02241,                  # note: assumed that every theta has iiv, set to 0 if no iiv.
-                              0.008069, 0.008639, 0.02862),
-                par_names = c(&quot;ka&quot;, &quot;ke&quot;, &quot;cl&quot;),                 # link the parameters in the model to the thetas/omegas
-                n = 500)</code></pre>
-<p>However, instead we could use observation and simulation data from NONMEM, e.g. (not run):</p><pre><code>message=FALSE, error=FALSE}
+                                <h1 id="continuous-data">Continuous data</h1>
+<p>Load the library and get the observation data and simulation data.
+In the first example, we&apos;ll use a dataset that&apos;s available in R by default (Theophylline) and generate the simulation dataset in R.</p>
+<pre><code>library(vpc)
+vpc(sim = simple_data$sim, obs = simple_data$obs)
+vpc(sim = simple_data$sim, obs = simple_data$obs, lloq = 20)
+</code></pre><p>However, instead we could use observation and simulation data from NONMEM, e.g. (not run):</p>
+<pre><code>message=FALSE, error=FALSE}
 obs &lt;- read_table_nm(&quot;sdtab1&quot;)   # an output table with at least ID, TIME, DV
-sim &lt;- read_table_nm(&quot;simtab1&quot;)  # a simulation file with at least ID, TIME, DV</code></pre>
-<p>The <code>read_table_nm()</code> function (originally written by Benjamin Guiastrennec) comes with the <code>vpc</code> library and is a fast way to read in output data created from the $TABLE record in NONMEM, including tables with multiple subproblems.</p><p><em>Note: If you imported the data from NONMEM, the VPC function will automatically detect column names from NONMEM, such as ID, TIME, DV. If you simulated data in R or got the data from a different software, you will probably have to change the variable names for the dependent and independent variable, and the individual index.</em></p><p>Next, the VPC can simply be created using:</p><pre><code>vpc (sim = sim, obs = obs)</code></pre>
-<p>An example with more explicit use of options and theming:</p><pre><code>vpc(sim = sim,
+sim &lt;- read_table_nm(&quot;simtab1&quot;)  # a simulation file with at least ID, TIME, DV
+</code></pre><p>The <code>read_table_nm()</code> function (originally written by Benjamin Guiastrennec) comes with the <code>vpc</code> library and is a fast way to read in output data created from the $TABLE record in NONMEM, including tables with multiple subproblems.</p>
+<p><em>Note: If you imported the data from NONMEM, the VPC function will automatically detect column names from NONMEM, such as ID, TIME, DV. If you simulated data in R or got the data from a different software, you will probably have to change the variable names for the dependent and independent variable, and the individual index.</em></p>
+<p>Next, the VPC can simply be created using:</p>
+<pre><code>vpc (sim = sim, obs = obs)
+</code></pre><p>An example with more explicit use of options and theming:</p>
+<pre><code>vpc(sim = sim,
        obs = obs,                               # supply simulation and observation dataframes
        obs_cols = list(
          dv = &quot;dv&quot;,                             # these column names are the default,
@@ -339,8 +330,8 @@ sim &lt;- read_table_nm(&quot;simtab1&quot;)  # a simulation file with at least 
        show = list(obs_dv = TRUE),              # plot observations?
        facet = &quot;rows&quot;,                          # wrap stratifications, or as &quot;row&quot; or &quot;column&quot;
        ylab = &quot;Concentration&quot;,
-       xlab = &quot;Time (hrs)&quot;)</code></pre>
-
+       xlab = &quot;Time (hrs)&quot;)
+</code></pre>
                                 
                                 </section>
                             
@@ -383,7 +374,7 @@ sim &lt;- read_table_nm(&quot;simtab1&quot;)  # a simulation file with at least 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Continuous data","level":"2.1","depth":1,"next":{"title":"Censored data","level":"2.2","depth":1,"path":"censored-data.md","ref":"censored-data.md","articles":[]},"previous":{"title":"Overview","level":"1.3","depth":1,"path":"overview-functionality.md","ref":"overview-functionality.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"continuous-data.md","mtime":"2016-09-14T18:11:42.730Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-07T15:57:32.976Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Continuous data","level":"2.1","depth":1,"next":{"title":"Censored data","level":"2.2","depth":1,"path":"censored-data.md","ref":"censored-data.md","articles":[]},"previous":{"title":"Overview","level":"1.3","depth":1,"path":"overview-functionality.md","ref":"overview-functionality.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"continuous-data.md","mtime":"2017-09-24T14:26:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-24T14:35:02.296Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

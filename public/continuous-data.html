@@ -301,7 +301,7 @@
                                 
                                 <h1 id="continuous-data">Continuous data</h1>
 <p>Load the library and get the observation data and simulation data.
-In the first example, we&apos;ll use a dataset that&apos;s available in R by default (Theophylline) and generate the simulation dataset in R.</p>
+In the first example, we&apos;ll use a simulated dataset included with the <code>vpc</code> package.</p>
 <pre><code>library(vpc)
 vpc(sim = simple_data$sim, obs = simple_data$obs)
 vpc(sim = simple_data$sim, obs = simple_data$obs, lloq = 20)
@@ -309,11 +309,12 @@ vpc(sim = simple_data$sim, obs = simple_data$obs, lloq = 20)
 <pre><code>message=FALSE, error=FALSE}
 obs &lt;- read_table_nm(&quot;sdtab1&quot;)   # an output table with at least ID, TIME, DV
 sim &lt;- read_table_nm(&quot;simtab1&quot;)  # a simulation file with at least ID, TIME, DV
-</code></pre><p>The <code>read_table_nm()</code> function (originally written by Benjamin Guiastrennec) comes with the <code>vpc</code> library and is a fast way to read in output data created from the $TABLE record in NONMEM, including tables with multiple subproblems.</p>
+</code></pre><p>The <code>read_table_nm()</code> function <sup>*1</sup> comes with the <code>vpc</code> library and is a fast way to read in output data created from the $TABLE record in NONMEM, including tables with multiple subproblems.</p>
 <p><em>Note: If you imported the data from NONMEM, the VPC function will automatically detect column names from NONMEM, such as ID, TIME, DV. If you simulated data in R or got the data from a different software, you will probably have to change the variable names for the dependent and independent variable, and the individual index.</em></p>
 <p>Next, the VPC can simply be created using:</p>
 <pre><code>vpc (sim = sim, obs = obs)
-</code></pre><p>An example with more explicit use of options and theming:</p>
+</code></pre><p>All the lines and <em>areas</em> shown in the plot can be customized in terms of the statistics they show (i.e. the bins, the quantiles for the confidence intervals, prediction-correction, etc), but also esthetic aspects such as the color, size, transparency, etc.</p>
+<p>An example with more explicit use of options and theming:</p>
 <pre><code>vpc(sim = sim,
        obs = obs,                               # supply simulation and observation dataframes
        obs_cols = list(
@@ -331,7 +332,8 @@ sim &lt;- read_table_nm(&quot;simtab1&quot;)  # a simulation file with at least 
        facet = &quot;rows&quot;,                          # wrap stratifications, or as &quot;row&quot; or &quot;column&quot;
        ylab = &quot;Concentration&quot;,
        xlab = &quot;Time (hrs)&quot;)
-</code></pre>
+</code></pre><p><em><sup>*1</sup> originally written by Benjamin Guiastrennec.</em></p>
+
                                 
                                 </section>
                             
@@ -374,7 +376,7 @@ sim &lt;- read_table_nm(&quot;simtab1&quot;)  # a simulation file with at least 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Continuous data","level":"2.1","depth":1,"next":{"title":"Censored data","level":"2.2","depth":1,"path":"censored-data.md","ref":"censored-data.md","articles":[]},"previous":{"title":"Overview","level":"1.3","depth":1,"path":"overview-functionality.md","ref":"overview-functionality.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"continuous-data.md","mtime":"2017-09-24T14:26:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-24T14:35:02.296Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Continuous data","level":"2.1","depth":1,"next":{"title":"Censored data","level":"2.2","depth":1,"path":"censored-data.md","ref":"censored-data.md","articles":[]},"previous":{"title":"Overview","level":"1.3","depth":1,"path":"overview-functionality.md","ref":"overview-functionality.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","expandable-chapters","toc"],"pluginsConfig":{"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"continuous-data.md","mtime":"2017-09-25T18:12:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-25T18:50:11.640Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

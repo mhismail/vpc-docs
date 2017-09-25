@@ -1,6 +1,6 @@
 # Binning
 
-The vpc functions currently provide three options for binning (`bins=` argument):
+The vpc functions provides various options for binning (`bins=` argument):
 
 - `time`:  Divide bins equally over time (or whatever independent variable is used). Recommended only when there is no observable clustering in the indenpendent variable.
 - `data`: Divide bins equally over the amount of data ordered by independent variable. Recommended only when data are for nominal timepoints _and_ all datapoints are available.

@@ -43,7 +43,14 @@ Stratified for event number (RTTE) and study arm:
             sim_cols = list(dv = "dv", idv="t"),
             obs_cols = list(idv = "t"), verbose=TRUE)
 
+## Notes on binning and smoothing
+
+In principle, the `vpc_tte()` function does allow binning and *smoothing* like commonly applied to a regular *vpc*. However, the binning and smoothing often makes the bins go over the 0 - 100% interval and some elements of the confidence interval may not be shown correctly or even missing from the plot. It is therefore advised to not apply binning for time-to-event data, and to just use the *'bins'* generated from the simulated data. The bins are basically based on all unique timepoints for all events the simulations dataset.
+
+
 ## Kaplan-Meier Mean Covariate plots (KMMC)
+
+KMMC plots have been [presented by Andy Hooker](https://www.page-meeting.org/default.asp?abstract=2564) as a model diagnostic for covariate inclusion. They can be created using the same `vpc_tte()` function by specifying the relevant predictor to the `kmmc` argument, as shown below. In contrast to regular time-to-event VPCs, binning is recommended for the KMMC plot.
 
     vpc_tte(sim = rtte_sim_nm,
             obs = rtte_obs_nm,

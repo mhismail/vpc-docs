@@ -1,3 +1,6 @@
+**This is only a mirror of the VPC package documentation. All credit is given to Ron Keizer for developing and maintaining the VPC package, and associated documentation.**
+
+
 # VPC documentation
 
 The VPC is a widely used diagnostic tool in pharmacometrics (see e.g. [here](http://page-meeting.org/default.asp?abstract=1434)), showing how certain statistics (percentiles) for observed data compare to those same statistics for data simulated from a model. Historically, these plots are most commonly created using [PsN](http://psn.sourceforge.net) and [Xpose](http://xpose.sourceforge.net), using NONMEM as the simulation engine) or with Monolix. The aim of this `vpc` package for R is to provide:

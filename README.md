@@ -1,5 +1,7 @@
 **This is only a mirror of the VPC package documentation. All credit is given to Ron Keizer for developing and maintaining the VPC package, and associated documentation.**
 
+https://vpc.gitbook.io/vpc-docs-1/
+
 
 # VPC documentation
 
